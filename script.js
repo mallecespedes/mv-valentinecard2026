@@ -21,7 +21,14 @@ function triggerChaos() {
   noBtn.style.transform = `scale(${shrink}) rotate(${rotation}deg)`;
 
   // Color chaos
-  const colors = ["#FF9AA2", "#FFB7B2", "#FFFA8B", "#E2F0CB", "#B5EAD7", "#C7CEEA"];
+  const colors = [
+  "#00FF00",
+  "#FF0000",
+  "#FFFF00",
+  "#00FFFF",
+  "#FF00FF",
+  "#FF6F00"
+  ];
   noBtn.style.backgroundColor = colors[chaosLevel % colors.length];
 
   if (chaosLevel > 2) noBtn.classList.add("shake");
