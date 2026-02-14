@@ -1,6 +1,7 @@
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const heartsContainer = document.getElementById("hearts-container");
+const nukeOverlay = document.getElementById("nuke-overlay");
 
 let yesScale = 1;
 let chaosLevel = 0;
@@ -37,23 +38,28 @@ noBtn.addEventListener("click", triggerChaos);
 
 // YES CLICK
 yesBtn.addEventListener("click", () => {
+  // evita doble click
+  yesBtn.disabled = true;
+  yesBtn.style.cursor = "default";
 
-  // explode hearts
+  // corazoncitos siguen
   for (let i = 0; i < 40; i++) {
     const heart = document.createElement("div");
-    heart.innerText = "💖";
+    heart.innerText = "";
     heart.style.position = "fixed";
     heart.style.left = Math.random() * window.innerWidth + "px";
     heart.style.top = Math.random() * window.innerHeight + "px";
     heart.style.fontSize = "20px";
     heart.style.animation = "floatUp 2s ease-out forwards";
-
     heartsContainer.appendChild(heart);
     setTimeout(() => heart.remove(), 2000);
   }
 
-  // redirect to success page after animation
+  // muestra la "bomba"
+  if (nukeOverlay) nukeOverlay.classList.add("show");
+
+  // redirige después de que se vea el gif un ratito
   setTimeout(() => {
     window.location.href = "success.html";
-  }, 800);
+  }, 1600);
 });
