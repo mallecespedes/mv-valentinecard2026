@@ -20,9 +20,6 @@ function triggerChaos() {
 
   noBtn.style.transform = `scale(${shrink}) rotate(${rotation}deg)`;
 
-  // Color chaos
-  const colors = ["#FF9AA2", "#FFB7B2", "#FFFA8B", "#E2F0CB", "#B5EAD7", "#C7CEEA"];
-
   // Color chaos (neon)
   const colors = [
     "#00FF00",
