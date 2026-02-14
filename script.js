@@ -17,19 +17,20 @@ function triggerChaos() {
   // Chaos visuals
   const shrink = Math.max(0.5, 1 - chaosLevel * 0.06);
   const rotation = Math.random() * chaosLevel * 15 - chaosLevel * 7;
-
   noBtn.style.transform = `scale(${shrink}) rotate(${rotation}deg)`;
 
-  // Color chaos
+  // Color chaos (neon)
   const colors = [
-  "#00FF00",
-  "#FF0000",
-  "#FFFF00",
-  "#00FFFF",
-  "#FF00FF",
-  "#FF6F00"
+    "#00FF00",
+    "#FF0000",
+    "#FFFF00",
+    "#00FFFF",
+    "#FF00FF",
+    "#FF6F00"
   ];
-  noBtn.style.backgroundColor = colors[chaosLevel % colors.length];
+
+  const randomColor = colors[chaosLevel % colors.length];
+  noBtn.style.backgroundColor = randomColor;
 
   // Glow effect
   document.body.style.boxShadow = "0 0 100px " + randomColor;
@@ -39,6 +40,7 @@ function triggerChaos() {
   if (chaosLevel > 6) noBtn.innerText = "pls stop 🫩";
   if (chaosLevel > 9) noBtn.style.display = "none";
 }
+
 
 // DESKTOP → hover
 noBtn.addEventListener("mouseenter", triggerChaos);
