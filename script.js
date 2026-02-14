@@ -68,5 +68,5 @@ yesBtn.addEventListener("click", () => {
   // redirige después de que se vea el gif un ratito
   setTimeout(() => {
     window.location.href = "success.html";
-  }, 1600);
+  }, 2600);
 });
