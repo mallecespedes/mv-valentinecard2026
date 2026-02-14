@@ -17,7 +17,11 @@ function triggerChaos() {
   // Chaos visuals
   const shrink = Math.max(0.5, 1 - chaosLevel * 0.06);
   const rotation = Math.random() * chaosLevel * 15 - chaosLevel * 7;
+
   noBtn.style.transform = `scale(${shrink}) rotate(${rotation}deg)`;
+
+  // Color chaos
+  const colors = ["#FF9AA2", "#FFB7B2", "#FFFA8B", "#E2F0CB", "#B5EAD7", "#C7CEEA"];
 
   // Color chaos (neon)
   const colors = [
@@ -28,12 +32,7 @@ function triggerChaos() {
     "#FF00FF",
     "#FF6F00"
   ];
-
-  const randomColor = colors[chaosLevel % colors.length];
-  noBtn.style.backgroundColor = randomColor;
-
-  // Glow effect
-  document.body.style.boxShadow = "0 0 100px " + randomColor;
+  noBtn.style.backgroundColor = colors[chaosLevel % colors.length];
 
   if (chaosLevel > 2) noBtn.classList.add("shake");
   if (chaosLevel > 4) noBtn.classList.add("panic");
