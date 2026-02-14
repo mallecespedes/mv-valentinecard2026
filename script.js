@@ -31,6 +31,9 @@ function triggerChaos() {
   ];
   noBtn.style.backgroundColor = colors[chaosLevel % colors.length];
 
+  // Glow effect
+  document.body.style.boxShadow = "0 0 100px " + randomColor;
+
   if (chaosLevel > 2) noBtn.classList.add("shake");
   if (chaosLevel > 4) noBtn.classList.add("panic");
   if (chaosLevel > 6) noBtn.innerText = "pls stop 🫩";
