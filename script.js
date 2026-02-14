@@ -43,7 +43,7 @@ function triggerChaos() {
 
 
 // DESKTOP → hover
-noBtn.addEventListener("mouseenter", triggerChaos);
+noBtn.addEventListener("mouseover", triggerChaos);
 
 // MOBILE → click fallback
 noBtn.addEventListener("click", triggerChaos);
