@@ -39,26 +39,24 @@ function triggerChaos() {
 
 
 // DESKTOP → hover
-noBtn.addEventListener("mouseover", triggerChaos);
+noBtn.addEventListener("mouseenter", triggerChaos);
 
 // MOBILE → click fallback
 noBtn.addEventListener("click", triggerChaos);
 
 // YES CLICK
 yesBtn.addEventListener("click", () => {
-  // evita doble click
-  yesBtn.disabled = true;
-  yesBtn.style.cursor = "default";
 
-  // corazoncitos siguen
+  // explode hearts
   for (let i = 0; i < 40; i++) {
     const heart = document.createElement("div");
-    heart.innerText = "";
+    heart.innerText = "💖";
     heart.style.position = "fixed";
     heart.style.left = Math.random() * window.innerWidth + "px";
     heart.style.top = Math.random() * window.innerHeight + "px";
     heart.style.fontSize = "20px";
     heart.style.animation = "floatUp 2s ease-out forwards";
+
     heartsContainer.appendChild(heart);
     setTimeout(() => heart.remove(), 2000);
   }
@@ -70,4 +68,5 @@ yesBtn.addEventListener("click", () => {
   setTimeout(() => {
     window.location.href = "success.html";
   }, 2600);
+  
 });
